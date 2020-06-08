@@ -54,7 +54,7 @@ if ($status == false) {
     </header>
     <form action="result.php" method="POST">
         <div class="searchForm">
-            <input class="searchForm-input" type="text" name="player">
+            <input class="searchForm-input" type="text" name="result">
             <button class="searchForm-submit" type="submit"></button>
         </div>
     </form>

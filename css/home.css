@@ -64,8 +64,8 @@ input {
 
   .post{
     position: fixed;
-    bottom: 50px;
-    right: 25px;
+    bottom: 15px;
+    right: 30px;
   }
 
   post:hover
