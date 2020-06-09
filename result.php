@@ -14,13 +14,13 @@ $result = $_POST['result'];
 $pdo = connect_to_db();
 
 // データ取得SQL作成
-$sql = 'SELECT * FROM post WHERE player = :result';
+$sql = 'SELECT * FROM post WHERE player LIKE "%' . $result . '%"';
 // var_dump($sql);
 // exit();
 
 // SQL準備&実行
 $stmt = $pdo->prepare($sql);
-$stmt->bindValue(':result', $result, PDO::PARAM_INT);
+// $stmt->bindValue(':result', $result, PDO::PARAM_INT);
 $status = $stmt->execute();
 // var_dump($stmt);
 // exit();
