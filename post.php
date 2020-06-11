@@ -1,3 +1,9 @@
+<?php
+session_start();
+include("functions.php");
+check_session_id();
+?>
+
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -17,7 +23,7 @@
             <table>
                 <div id="name">
                     <tr>
-                        <td valign="top"> (＠をつけた)名前</td>
+                        <td valign="top"> @褒めたい人</td>
                         <td><input type="text" name="player"></td>
                     </tr>
                 </div>

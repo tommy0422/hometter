@@ -2,8 +2,9 @@
 // var_dump($_POST);
 // exit();
 
-// 関数ファイル読み込み
+session_start();
 include('functions.php');
+check_session_id();
 
 //データ受け取り
 $result = $_POST['result'];
@@ -73,7 +74,9 @@ if ($status == false) {
 
 <body>
     <header>
-        <a href="home.php"><img src="img/logo.png" alt=""></a>
+        <div id="logo">
+            <a href="home.php"><img src="img/logo.png" alt=""></a>
+        </div>
     </header>
     <h1>検索結果</h1>
     <hr>

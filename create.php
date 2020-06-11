@@ -2,12 +2,15 @@
 // var_dump($_POST);
 // exit();
 
-//関数ファイル読み込み
-include("functions.php");
+session_start();
+include('functions.php');
+check_session_id();
 
 //データ受け取り
 $player = $_POST['player'];
 $text = $_POST['text'];
+$from_player = $_SESSION['user_id'];
+
 
 // 項目入力のチェック
 // 値が存在しないor空で送信されてきた場合はNGにする
@@ -24,10 +27,11 @@ if (
 $pdo = connect_to_db();
 
 // データ登録SQL作成
-$sql = 'INSERT INTO post(id, player, text, created_at) VALUES(NULL, :player, :text, sysdate())';
+$sql = 'INSERT INTO post(id, from_player, player, text, created_at) VALUES(NULL, :from_player ,:player, :text, sysdate())';
 
 // SQL準備&実行
 $stmt = $pdo->prepare($sql);
+$stmt->bindValue(':from_player', $from_player, PDO::PARAM_STR);
 $stmt->bindValue(':player', $player, PDO::PARAM_STR);
 $stmt->bindValue(':text', $text, PDO::PARAM_STR);
 $status = $stmt->execute();

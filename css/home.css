@@ -5,7 +5,27 @@
 header{
     background-color: #00acee;
     height: 70px;
-    text-align: center;
+}
+
+#header{
+  display: flex;
+  justify-content: center;
+}
+
+#logo{
+    display: flex;
+    justify-content: center; /* 子要素を中央揃え */
+    position: relative;
+}
+
+#logout{
+    position: absolute;
+    right: 0; 
+    margin-right: 10px;
+}
+
+#logout{
+  padding-left: 50px;
 }
 
 img{
@@ -25,7 +45,7 @@ input {
     position: relative;
   }
   .searchForm-input {
-    width: 100%;
+    width: 97%;
   }
   .searchForm-submit {
     position: absolute;

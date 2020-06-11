@@ -1,7 +1,9 @@
 <?php
+session_start();
+include('functions.php');
+check_session_id();
 
 //DB接続の設定
-include('functions.php');
 $pdo = connect_to_db();
 
 // データ取得SQL作成
@@ -25,8 +27,8 @@ if ($status == false) {
     // <tr><td>deadline</td><td>todo</td><tr>の形になるようにforeachで順番に$outputへデータを追加
     // `.=`は後ろに文字列を追加する，の意味
     foreach ($result as $record) {
-        $output .= "<div class>";
-        $output .= "<h4>{$record["player"]}</h4>";
+        $output .= "<div class=post_box>";
+        $output .= "<h4>From {$record['from_player']} <br> ---> {$record["player"]}</h4>";
         $output .= "<td>{$record["text"]}</td>";
         $output .= "</div>";
         $output .= "<hr>";
@@ -50,7 +52,14 @@ if ($status == false) {
 
 <body>
     <header>
-        <img src="img/logo.png" alt="">
+        <div id="header">
+            <div id="logo">
+                <img src="img/logo.png" alt="">
+            </div>
+            <div id="logout">
+                <a href="logout.php"><img src="img/logout.png" alt=""></a>
+            </div>
+        </div>
     </header>
     <form action="result.php" method="POST">
         <div class="searchForm">
