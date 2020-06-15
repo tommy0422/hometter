@@ -17,7 +17,7 @@
             <p>@から始まるID</p>
             <p class="id"><input type="text" name="player" /></p>
             <p>Password</p>
-            <p class="pass"><input type="text" name="pass" /></p>
+            <p class="pass"><input type="password" name="pass" /></p>
             <p class="check"><input type="checkbox" name="checkbox" />パスワードを保存</p>
             <p class="submit"><input type="submit" value="Login" /></p>
             <a href="register.php">新規登録の方はこちら</a>

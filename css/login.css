@@ -41,8 +41,6 @@ form p{
 
 input[type="email"],
 input[type="password"] {
-  width: 300px;
-  padding: 4px;
   font-size: 14px;
   }
     

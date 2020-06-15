@@ -21,7 +21,6 @@ $sql = 'SELECT * FROM post WHERE player LIKE "%' . $result . '%"';
 
 // SQL準備&実行
 $stmt = $pdo->prepare($sql);
-// $stmt->bindValue(':result', $result, PDO::PARAM_INT);
 $status = $stmt->execute();
 // var_dump($stmt);
 // exit();
