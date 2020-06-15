@@ -7,7 +7,7 @@ check_session_id();
 $pdo = connect_to_db();
 
 // データ取得SQL作成
-$sql = 'SELECT * FROM post';
+$sql = 'SELECT * FROM post ';
 
 // SQL準備&実行
 $stmt = $pdo->prepare($sql);
@@ -46,6 +46,7 @@ if ($status == false) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <link rel="stylesheet" href="css/home.css">
     <title>ホーム画面</title>
 </head>
@@ -53,6 +54,9 @@ if ($status == false) {
 <body>
     <header>
         <div id="header">
+            <div id="setting">
+                <a href="setting.php"><img src="img/setting.png" alt=""></a>
+            </div>
             <div id="logo">
                 <img src="img/logo.png" alt="">
             </div>
@@ -73,6 +77,10 @@ if ($status == false) {
             <img src="img/post.png" alt="">
         </a>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        swal("<?= $_SESSION['user_id'] ?>さん、こんにちは！");
+    </script>
 </body>
 
 </html>

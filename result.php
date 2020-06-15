@@ -75,7 +75,7 @@ if ($status == false) {
 <body>
     <header>
         <div id="logo">
-            <a href="home.php"><img src="img/logo.png" alt=""></a>
+            <a href="setting.php?id={$_SESSION['id']}"><img src="img/logo.png" alt=""></a>
         </div>
     </header>
     <h1>検索結果</h1>

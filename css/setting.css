@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+}
+
+h1{
+    text-align: center;
+}
+
+header{
+    background-color: #00acee;
+    height: 70px;
+}
+
+#logo{
+    display: flex;
+    justify-content: center; /* 子要素を中央揃え */
+    position: relative;
+}
+
+img{
+    width: 50px;
+    margin-top: 10px;
+}
+
+.button{
+    text-align: center;
+    margin-top: 20px;
+}
+
+legend{
+    font-weight: bold;
+    text-align: center;
+}

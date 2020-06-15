@@ -36,8 +36,14 @@ if (!$val) {
     $_SESSION = array();
     // セッション変数を空にする
     $_SESSION["session_id"] = session_id();
-    $_SESSION["is_admin"] = $val["is_admin"];
     $_SESSION["user_id"] = $val["user_id"];
-    header("Location:home.php");
-    exit();
+    $_SESSION["is_admin"] = $val["is_admin"];
+
+    if ($_SESSION['is_admin'] == 1) {
+        header("Location:manage_home.php");
+        exit();
+    } else {
+        header("Location:home.php");
+        exit();
+    }
 }

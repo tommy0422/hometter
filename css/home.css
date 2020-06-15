@@ -12,6 +12,12 @@ header{
   justify-content: center;
 }
 
+#setting{
+  position: absolute;
+  left: 0; 
+  margin-left: 10px;
+}
+
 #logo{
     display: flex;
     justify-content: center; /* 子要素を中央揃え */
