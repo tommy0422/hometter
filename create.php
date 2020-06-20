@@ -14,7 +14,7 @@ $user_id = $_SESSION["user_id"];
 // var_dump($user_id);
 // exit();
 
-//データの取得
+//投稿するユーザーの情報を取得
 $sql = 'SELECT * FROM users_table WHERE user_id = :user_id';
 
 // SQL準備&実行
@@ -54,6 +54,28 @@ if (
     echo json_encode(["error_msg" => "no input"]);
     exit();
 }
+
+//sql準備&実行(褒めた人がユーザーに存在するかどうか確認する)
+$sql = 'SELECT * FROM users_table WHERE user_id = :player';
+
+$stmt = $pdo->prepare($sql);
+$stmt->bindValue(':player', $player, PDO::PARAM_STR);
+$status = $stmt->execute();
+
+if ($status == false) {
+    // SQL実行に失敗した場合はここでエラーを出力し，以降の処理を中止する
+    $error = $stmt->errorInfo();
+    echo json_encode(["error_msg" => "{$error[2]}"]);
+    exit();
+} else {
+    $record = $stmt->fetch(PDO::FETCH_ASSOC);
+    // var_dump($record);
+    // exit();
+}
+
+$player = $record['id'];
+// var_dump($player);
+// exit();
 
 // データ登録SQL作成
 $sql = 'INSERT INTO post(id, from_player, player, text, created_at) VALUES(NULL, :user_id ,:player, :text, sysdate())';

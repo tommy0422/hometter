@@ -50,7 +50,7 @@ if ($status == false) {
     </header>
     <form action="update.php" method="POST">
         <fieldset>
-            <legend>マイページ</legend>
+            <legend>My Information</legend>
             <div>
                 新しい@名前: <input type="text" name="user_id" value="<?= $record["user_id"] ?>">
             </div>
@@ -62,6 +62,19 @@ if ($status == false) {
             </div>
             <p>※変更するとログイン画面に戻ります.</p>
             <input type="hidden" name="id" value="<?= $record["id"] ?>">
+        </fieldset>
+    </form>
+    <form action="upload.php" method="POST" enctype="multipart/form-data">
+        <fieldset>
+            <legend>Icon</legend>
+            <div class="icon_box">
+                <div id="icon_box">
+                    <input class="icon" type="file" name="upfile" accept="image/*" capture="camera">
+                </div>
+                <div id="button_box">
+                    <button>更新</button>
+                </div>
+            </div>
         </fieldset>
     </form>
 </body>

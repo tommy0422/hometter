@@ -9,6 +9,7 @@ h1{
 header{
     background-color: #00acee;
     height: 70px;
+    margin: 0;
 }
 
 #logo{
@@ -30,4 +31,26 @@ img{
 legend{
     font-weight: bold;
     text-align: center;
+}
+
+.icon_box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    opacity: 0.01%;
+}
+
+#icon_box{
+    background-image: url(../img/icon.png);
+}
+
+#button_box{
+    margin-top: 10px;
 }
