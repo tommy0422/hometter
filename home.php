@@ -28,10 +28,17 @@ if ($status == false) {
 }
 
 //iconの定義
-$icon = $record["image"];
+if ($record["image"] != NULL) {
+    $icon = $record["image"];
+} else {
+    $icon = "img/no_image.png";
+}
+// var_dump($icon);
+// exit();
 
 // データ取得SQL作成
-$sql = "SELECT t2.user_id AS from_name,t3.user_id AS to_name,text,t1.created_at AS time from post AS t1 left join users_table AS t2 on t1.from_player = t2.id left join users_table AS t3 on  t1.player = t3.id";
+$sql = "SELECT t2.user_id AS from_name,t3.user_id AS to_name,t2.image AS from_icon,t3.image AS to_icon,text,t1.created_at AS time from post AS t1 left join users_table AS t2 on t1.from_player = t2.id left join users_table AS t3 on  t1.player = t3.id ORDER BY t1.created_at DESC";
+
 // SQL準備&実行
 $stmt = $pdo->prepare($sql);
 $status = $stmt->execute();
@@ -50,16 +57,20 @@ if ($status == false) {
     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);  // データの出力用変数（初期値は空文字）を設定
     // var_dump($result);
     // exit();
-
     $output = "";
     // <tr><td>deadline</td><td>todo</td><tr>の形になるようにforeachで順番に$outputへデータを追加
     // `.=`は後ろに文字列を追加する，の意味
     foreach ($result as $record) {
         // var_dump($record);
         // exit();
-        $output .= "<div class=post_box>";
-        $output .= "<h4>From {$record["from_name"]} <br> ---> {$record["to_name"]}</h4>";
-        $output .= "<td>{$record["text"]}</td>";
+        $output .= "<div>";
+        $output .= "<h4>";
+        $output .= "From {$record["from_name"]} ";
+        $output .= "<img class = icon src ={$record["from_icon"]}><br>";
+        $output .= "--->{$record["to_name"]} ";
+        $output .= "<img class = icon src ={$record["to_icon"]}>";
+        $output .= "</h4>";
+        $output .= "<td><p>{$record["text"]}</p></td>";
         $output .= "<p class= time>{$record["time"]}</p>";
         $output .= "</div>";
         $output .= "<hr>";
@@ -79,7 +90,7 @@ if ($status == false) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" rel="stylesheet">
     <link rel="stylesheet" href="css/home.css">
     <title>ホーム画面</title>
 </head>
@@ -88,7 +99,7 @@ if ($status == false) {
     <header>
         <div id="header">
             <div id="setting">
-                <a href="setting.php"><?= $icon ?></a>
+                <a href="setting.php"><img id="icon" src="<?= $icon ?>"></a>
             </div>
             <div id="logo">
                 <img src="img/logo.png" alt="">
@@ -111,9 +122,6 @@ if ($status == false) {
         </a>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script>
-        swal("<?= $_SESSION['user_id'] ?>さん、こんにちは！");
-    </script>
 </body>
 
 </html>

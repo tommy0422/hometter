@@ -28,12 +28,19 @@ img{
     margin-top: 20px;
 }
 
+fieldset{
+    margin: 10px;
+}
+
 legend{
+    font-family: 'Walter Turncoat', cursive;;
     font-weight: bold;
     text-align: center;
+    font-size: 25px;
 }
 
 .icon_box{
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -41,14 +48,18 @@ legend{
 }
 
 .icon {
+    position: absolute;
+    margin-top: -15px;
     width: 80px;
     height: 80px;
     border-radius: 50%;
     opacity: 0.01%;
 }
 
-#icon_box{
-    background-image: url(../img/icon.png);
+#preview{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
 }
 
 #button_box{

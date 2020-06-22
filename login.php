@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Walter+Turncoat&display=swap" rel="stylesheet">
     <title>ログイン画面</title>
     <link rel="stylesheet" type="text/css" href="css/login.css" media="all" />
 </head>
@@ -23,6 +23,9 @@
             <a href="register.php">新規登録の方はこちら</a>
         </form>
     </div>
+    <footer>
+        <p>&copy; 2020 YosukeTomii.</p>
+    </footer>
 </body>
 
 </html>

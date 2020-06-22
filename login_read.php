@@ -37,6 +37,7 @@ if (!$val) {
     // セッション変数を空にする
     $_SESSION["session_id"] = session_id();
     $_SESSION["user_id"] = $val["user_id"];
+    $_SESSION["image"] = $val["image"];
     $_SESSION["is_admin"] = $val["is_admin"];
 
     if ($_SESSION['is_admin'] == 1) {

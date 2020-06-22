@@ -33,8 +33,8 @@ if (isset($_FILES['upfile']) && $_FILES['upfile']['error'] ==  0) {
             $stmt->bindValue(':user_id', $user_id, PDO::PARAM_STR);
             $stmt->bindValue(':image', $fileNameToSave, PDO::PARAM_STR);
             $status = $stmt->execute();
-            var_dump($status);
-            exit();
+            // var_dump($status);
+            // exit();
 
             if ($status == false) {
                 // SQL実行に失敗した場合はここでエラーを出力し，以降の処理を中止する

@@ -29,6 +29,12 @@ if ($status == false) {
     // var_dump($record);
     // exit();
 }
+if ($record["image"] != NULL) {
+    $user_icon = $record["image"];
+} else {
+    $user_icon = "img/no_image.png";
+}
+
 
 ?>
 
@@ -38,6 +44,7 @@ if ($status == false) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Walter+Turncoat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/setting.css">
     <title>設定画面</title>
 </head>
@@ -48,6 +55,18 @@ if ($status == false) {
             <a href="home.php"><img src="img/logo.png" alt=""></a>
         </div>
     </header>
+    <form action="upload.php" method="POST" enctype="multipart/form-data">
+        <fieldset>
+            <legend>Icon</legend>
+            <figure class="icon_box">
+                <img id="preview" src="<?= $user_icon ?>">
+                <input class="icon" type="file" name="upfile" accept='image/*' capture="camera" onchange="previewImage(this);">
+                <div id="button_box">
+                    <button>更新</button>
+                </div>
+            </figure>
+        </fieldset>
+    </form>
     <form action="update.php" method="POST">
         <fieldset>
             <legend>My Information</legend>
@@ -64,19 +83,16 @@ if ($status == false) {
             <input type="hidden" name="id" value="<?= $record["id"] ?>">
         </fieldset>
     </form>
-    <form action="upload.php" method="POST" enctype="multipart/form-data">
-        <fieldset>
-            <legend>Icon</legend>
-            <div class="icon_box">
-                <div id="icon_box">
-                    <input class="icon" type="file" name="upfile" accept="image/*" capture="camera">
-                </div>
-                <div id="button_box">
-                    <button>更新</button>
-                </div>
-            </div>
-        </fieldset>
-    </form>
+
+    <script>
+        function previewImage(obj) {
+            var fileReader = new FileReader();
+            fileReader.onload = (function() {
+                document.getElementById('preview').src = fileReader.result;
+            });
+            fileReader.readAsDataURL(obj.files[0]);
+        }
+    </script>
 </body>
 
 </html>
