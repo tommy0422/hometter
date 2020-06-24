@@ -65,3 +65,14 @@ legend{
 #button_box{
     margin-top: 10px;
 }
+
+.point{
+    font-family: "M PLUS Rounded 1c";
+    background-color: rgb(100, 211, 255);
+}
+
+#point{
+    font-family: 'Walter Turncoat', cursive;;
+    text-align: center;
+    font-size: 30px;
+}

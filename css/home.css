@@ -1,122 +1,122 @@
 *{
-    margin: 0;
+  margin: 0;
 }
 
 header{
-    background-color: #00acee;
-    height: 70px;
+  background-color: #00acee;
+  height: 70px;
 }
 
 #header{
-  display: flex;
-  justify-content: center;
+display: flex;
+justify-content: center;
 }
 
 #setting{
-  position: absolute;
-  left: 0; 
-  margin-left: 10px;
+position: absolute;
+left: 0; 
+margin-left: 10px;
 }
 
 #icon{
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
+width: 50px;
+height: 50px;
+border-radius: 50%;
 }
 
 #logo{
-    display: flex;
-    justify-content: center; /* 子要素を中央揃え */
-    position: relative;
+  display: flex;
+  justify-content: center; /* 子要素を中央揃え */
+  position: relative;
 }
 
 #logout{
-    position: absolute;
-    right: 0; 
-    margin-right: 10px;
+  position: absolute;
+  right: 0; 
+  margin-right: 10px;
 }
 
 #logout{
-  padding-left: 50px;
+padding-left: 50px;
 }
 
 img{
-    width: 50px;
-    margin-top: 10px;
+  width: 50px;
+  margin-top: 10px;
 }
 
 input {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    padding: 10px;
-    border: 1px solid #999;
-    border-radius: 5px;
-  }
-  .searchForm {
-    position: relative;
-  }
-  .searchForm-input {
-    width: 97%;
-  }
-  .searchForm-submit {
-    position: absolute;
-    width: 38px;
-    height: 38px;
-    top: calc(50% - 19px);
-    right: 0;
-    border-radius: 0 4px 4px 0;
-    background: #999;
-  }
-  .searchForm-submit::before {
-    position: absolute;
-    content: '';
-    width: 15px;
-    height: 15px;
-    top: calc(50% - 9px);
-    left: calc(50% - 9px);
-    border-radius: 50%;
-    box-shadow: 0 0 0 2px #fff;
-  }
-  .searchForm-submit::after {
-    position: absolute;
-    content: '';
-    width: 8px;
-    height: 6px;
-    top: calc(50% + 6px);
-    left: calc(50% + 2px);
-    border-top: solid 2px #fff;
-    transform: rotate(45deg);
-  }
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: 10px;
+  border: 1px solid #999;
+  border-radius: 5px;
+}
+.searchForm {
+  position: relative;
+}
+.searchForm-input {
+  width: 97%;
+}
+.searchForm-submit {
+  position: absolute;
+  width: 38px;
+  height: 38px;
+  top: calc(50% - 19px);
+  right: 0;
+  border-radius: 0 4px 4px 0;
+  background: #999;
+}
+.searchForm-submit::before {
+  position: absolute;
+  content: '';
+  width: 15px;
+  height: 15px;
+  top: calc(50% - 9px);
+  left: calc(50% - 9px);
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px #fff;
+}
+.searchForm-submit::after {
+  position: absolute;
+  content: '';
+  width: 8px;
+  height: 6px;
+  top: calc(50% + 6px);
+  left: calc(50% + 2px);
+  border-top: solid 2px #fff;
+  transform: rotate(45deg);
+}
 
-  .time{
-    text-align: right;
-    margin-right: 15px;
-  }
+.time{
+  text-align: right;
+  margin-right: 15px;
+}
 
-  h4{
-    font-family: "M PLUS Rounded 1c";
-    margin-top: 10px;
-    margin-bottom: 10px;
-  }
+h4{
+  font-family: "M PLUS Rounded 1c";
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
 
-  p{
-    font-family: "M PLUS Rounded 1c";
-  }
+p{
+  font-family: "M PLUS Rounded 1c";
+}
 
-  img.icon{
-    border-radius: 50%;
-    height: 50px;
-    width: 50px;
-  }
+img.icon{
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+}
 
-  .post{
-    position: fixed;
-    bottom: 15px;
-    right: 30px;
-  }
+.post{
+  position: fixed;
+  bottom: 15px;
+  right: 30px;
+}
 
-  post:hover
+post:hover
 {
-    opacity: 0.85 ;
+  opacity: 0.85 ;
 }
